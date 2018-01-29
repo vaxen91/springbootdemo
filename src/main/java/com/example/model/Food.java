@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name = "food")
 public class Food {
@@ -30,22 +32,20 @@ public class Food {
 		this.id = id;
 	}
 
-	public String getFoodName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setFoodName(String foodName) {
-		this.name = foodName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public int getFoodPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setFoodPrice(int foodPrice) {
-		this.price = foodPrice;
+	public void setPrice(int price) {
+		this.price = price;
 	}
-	
-	
 
 }

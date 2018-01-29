@@ -18,24 +18,41 @@ public class FoodController {
 	@Autowired
 	private FoodService foodService;
 	
-	@RequestMapping(value = "/foodApp/home", method = RequestMethod.POST)
+	@RequestMapping(value = "/foodApp/foodManager", method = RequestMethod.POST)
 	public ModelAndView createNewFood(@Valid Food food, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView();
-		Food foodExists = foodService.findByName(food.getFoodName());
+		Food foodExists = foodService.findByName(food.getName());
 		if (foodExists != null) {
 			bindingResult
-					.rejectValue("email", "error.user",
-							"There is already a user registered with the email provided");
+					.rejectValue("name", "error.food",
+							"There is already a food registered with the name provided");
 		}
 		if (bindingResult.hasErrors()) {
-			modelAndView.setViewName("registration");
+			modelAndView.setViewName("/foodApp/foodManager");
 		} else {
 			foodService.saveFood(food);
-			modelAndView.addObject("successMessage", "User has been registered successfully");
-			modelAndView.addObject("user", new Food());
-			modelAndView.setViewName("registration");
+			modelAndView.addObject("successMessage", "Food has been registered successfully");
+			modelAndView.addObject("food", new Food());
+			modelAndView.setViewName("/foodApp/foodManager");
 			
 		}
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/foodApp/foodManager", method = RequestMethod.GET)
+	public ModelAndView foodRegistration(){
+		ModelAndView modelAndView = new ModelAndView();
+		Food food = new Food();
+		modelAndView.addObject("food", food);
+		modelAndView.setViewName("/foodApp/foodManager");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/foodApp/foodMenu", method = RequestMethod.GET)
+	public ModelAndView foodMenu(){
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("foods", foodService.findAll());
+		modelAndView.setViewName("/foodApp/foodMenu");
 		return modelAndView;
 	}
 
