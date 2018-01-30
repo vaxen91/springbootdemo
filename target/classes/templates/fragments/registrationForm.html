@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:fragment="registrationForm">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<div class="login-panel panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Sign Up</h3>
+						</div>
+						<div class="panel-body">
+							<form autocomplete="off" action="#" th:action="@{/registration}"
+								th:object="${user}" method="post"
+								role="form">
+								<h2>Welcome!</h2>
+
+								<fieldset>
+									<div class="form-group">
+										<label th:if="${#fields.hasErrors('name')}"
+											th:errors="*{name}" class="validation-message"></label> <input
+											class="form-control" placeholder="Name" th:field="*{name}"
+											type="text" autofocus>
+									</div>
+									<div class="form-group">
+										<label th:if="${#fields.hasErrors('lastName')}"
+											th:errors="*{lastName}" class="validation-message"></label> <input
+											class="form-control" placeholder="Last Name"
+											th:field="*{lastName}" type="text" autofocus>
+									</div>
+									<div class="form-group">
+										<label th:if="${#fields.hasErrors('email')}"
+											th:errors="*{email}" class="validation-message"></label> <input
+											class="form-control" placeholder="email" th:field="*{email}"
+											type="email" autofocus>
+									</div>
+									<div class="form-group">
+										<label th:if="${#fields.hasErrors('password')}"
+											th:errors="*{password}" class="validation-message"></label> <input
+											class="form-control" placeholder="password"
+											th:field="*{password}" type="password" autofocus>
+									</div>
+
+									<button type="submit" class="btn btn-lg btn-success btn-block">Register User</button>
+								</fieldset>
+								<span th:utext="${successMessage}"></span>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

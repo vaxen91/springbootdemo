@@ -27,26 +27,37 @@
 
 							<div class="form-group">
 								<div class="col-sm-9">
-									<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+									<label for="inputName">Food Name</label> <label
+										th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
 										class="validation-message"></label> <input type="text"
-										th:field="*{name}" placeholder="Name" class="form-control" />
+										id="inputName" th:field="*{name}" placeholder="Name"
+										class="form-control" />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<div class="col-sm-9">
-									<label th:if="${#fields.hasErrors('price')}"
-										th:errors="*{price}" class="validation-message"></label> <input
-										class="currency" type="number" th:field="*{price}"
-										placeholder="Price" class="form-control" />
+									<label for="inputPrice">Price</label> <label
+										th:if="${#fields.hasErrors('price')}" th:errors="*{price}"
+										class="validation-message"></label>
+
+
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<div class="input-group-text">$</div>
+										
+										<input id="inputPrice" class="currency" type="number"
+											th:field="*{price}" placeholder="Price" class="form-control" />
+									</div>
+</div>
 								</div>
 							</div>
 
-
 							<div class="form-group">
 								<div class="col-sm-9">
-									<button type="button" class="btn btn-primary btn-block"
-										data-toggle="modal" data-target="#exampleModal">Create new Food Type</button>
+									<button type="button" class="btn btn-lg btn-success btn-block"
+										data-toggle="modal" data-target="#exampleModal">Create
+										new Food Type</button>
 								</div>
 							</div>
 
@@ -59,7 +70,8 @@
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel">Insert Food</h5>
+											<h5 class="modal-title" id="exampleModalLabel">Insert
+												Food</h5>
 											<button type="button" class="close" data-dismiss="modal"
 												aria-label="Close">
 												<span aria-hidden="true">&times;</span>
