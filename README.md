@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/vaxen91/springbootdemo.svg?branch=master)](https://travis-ci.org/vaxen91/springbootdemo)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # SpringSecurityLoginTutorial
 
