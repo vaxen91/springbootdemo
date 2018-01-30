@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/vaxen91/springbootdemo.svg?branch=master)](https://travis-ci.org/vaxen91/springbootdemo)
+
 # SpringSecurityLoginTutorial
 
 1. mvn clean
