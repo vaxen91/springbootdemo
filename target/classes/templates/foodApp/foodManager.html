@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head th:include="fragments/script :: css">
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
 </head>
 
 <body>
-    <div id="wrapper">
-    		<!-- header and navbar -->
-	 	<div th:replace="fragments/navbar :: nav"></div>
-	 	<div th:replace="fragments/navbar :: sideMenu"></div>
-        <div id="page-wrapper">
-        		<!-- food table -->
-        		<div th:replace="fragments/foodForm :: foodForm"></div>
-        </div>
-  
-    </div>
-    
+	<div id="wrapper">
+		<!-- header and navbar -->
+		<div th:replace="fragments/navbar :: nav"></div>
+		<div th:replace="fragments/navbar :: sideMenu"></div>
+		<div id="page-wrapper">
+			<!-- food table -->
+			<div th:replace="fragments/foodForm :: foodForm"></div>
+		</div>
+
+	</div>
+
 	<!-- JS Scripts -->
 	<div th:replace="fragments/script :: js"></div>
 </body>
+
 </html>

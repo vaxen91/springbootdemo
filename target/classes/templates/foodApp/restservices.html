@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head th:include="fragments/script :: css">
+
+    <script src="https://code.jquery.com/jquery-3.0.0-alpha1.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JS Bin</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- menu and navbar -->
+        <div th:replace="fragments/navbar :: nav"></div>
+        <div th:replace="fragments/navbar :: sideMenu"></div>
+        <div id="page-wrapper">
+            <!-- service -->
+            <h1 class="page-header">Rest Services</h1>
+
+            <div class="list-group">
+              <a href="" class="list-group-item list-group-item-action active">
+                Test
+              </a>
+              <a href="/test/hello" class="list-group-item list-group-item-action">/hello </a>
+              <a href="/test/getFoods" class="list-group-item list-group-item-action">/getFoods</a>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- JS Scripts -->
+    <div th:replace="fragments/script :: js"></div>
+
+
+</body>
+
+</html>

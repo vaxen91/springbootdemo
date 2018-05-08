@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-	
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head th:include="fragments/script :: css">
 
 
@@ -18,18 +16,18 @@
 <body>
 
     <div id="wrapper">
-    		<!-- header and navbar -->
-	 	<div th:replace="fragments/navbar :: nav"></div>
-	 	<div th:replace="fragments/navbar :: sideMenu"></div>
-	 	
+        <!-- header and navbar -->
+        <div th:replace="fragments/navbar :: nav"></div>
+        <div th:replace="fragments/navbar :: sideMenu"></div>
+
         <div id="page-wrapper">
-        		<span th:utext="${userName}"></span>
+            <span th:utext="${userName}"></span>
         </div>
-  
+
     </div>
-    
-	<!-- JS Scripts -->
-	<div th:replace="fragments/script :: js"></div>
+
+    <!-- JS Scripts -->
+    <div th:replace="fragments/script :: js"></div>
 </body>
 
 </html>

@@ -11,7 +11,9 @@ import com.example.model.Food;
 
 @Repository("foodRepository")
 public interface FoodRepository extends JpaRepository<Food, Long>{
-	Food findByName(String name);
-	List <Food> findAll();
+	
+	public Food findByName(String name);
+	
+	public List <Food> findAll();
 
 }
