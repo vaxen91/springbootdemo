@@ -6,10 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
+@ApiModel(description="Detail about the food")
 @Table(name = "food")
 public class Food {
 	
@@ -20,6 +25,8 @@ public class Food {
 	
 	
 	@Column(name = "food_name")
+	@Size(min=2,message="Name should have at least 2 characters")
+	@ApiModelProperty(notes="Name should have at least 2 characters")
 	private String name;
 	
 	@Column(name = "food_price")

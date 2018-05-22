@@ -52,6 +52,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/login").permitAll()
 				.antMatchers("/registration").permitAll()
 				.antMatchers("/index").permitAll()
+				.antMatchers("/foodApp/*").authenticated()
 				.and().csrf().disable().formLogin()
 				.loginPage("/login").failureUrl("/login?error=true")
 				.defaultSuccessUrl("/foodApp/home")
@@ -61,6 +62,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login")
 				.and().exceptionHandling()
 				.accessDeniedPage("/access-denied");
+		
+//		http.
+//		authorizeRequests()
+//			.antMatchers("/").permitAll()
+//			.antMatchers("/login").permitAll()
+//			.antMatchers("/registration").permitAll()
+//			.antMatchers("/index").permitAll()
+//			.and().csrf().disable().formLogin()
+//			.loginPage("/login").failureUrl("/login?error=true")
+//			.defaultSuccessUrl("/foodApp/home")
+//			.usernameParameter("email")
+//			.passwordParameter("password")
+//			.and().logout()
+//			.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login")
+//			.and().exceptionHandling()
+//			.accessDeniedPage("/access-denied");
 	}
 	
 	@Override

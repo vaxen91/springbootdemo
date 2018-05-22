@@ -7,17 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.example.exception.FoodNotFoundException;
 import com.example.model.Food;
 import com.example.repository.FoodRepository;
 
+
+
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/foodApp")
 public class DemoRestController {
 
 	@Autowired
@@ -29,7 +31,7 @@ public class DemoRestController {
 	}
 
 	@RequestMapping(value = { "/foods" }, method = RequestMethod.GET)
-	public List<Food> doGetFoods() {
+	public List<Food> findAllFoods() {
 		return this.foodRepository.findAll();
 	}
 
@@ -46,7 +48,7 @@ public class DemoRestController {
 	}
 
 	@RequestMapping(value = { "/foods" }, method = RequestMethod.POST)
-	public ResponseEntity<Object> createUsers(@ModelAttribute Food food) {
+	public ResponseEntity<Object> createFood(@ModelAttribute Food food) {
 
 		Food savedFood = this.foodRepository.save(food);
 
