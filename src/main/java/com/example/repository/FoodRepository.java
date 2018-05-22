@@ -10,7 +10,7 @@ import com.example.model.Food;
 
 
 @Repository("foodRepository")
-public interface FoodRepository extends JpaRepository<Food, Long>{
+public interface FoodRepository extends JpaRepository<Food, Integer>{
 	
 	public Food findByName(String name);
 	

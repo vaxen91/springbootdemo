@@ -18,6 +18,7 @@ public class Food {
 	@Column(name = "food_id")
 	private int id;
 	
+	
 	@Column(name = "food_name")
 	private String name;
 	
